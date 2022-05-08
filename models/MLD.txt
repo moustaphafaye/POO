@@ -1,0 +1,25 @@
+MDL
+Heritage 
+ -Singletable:Toutes les classes qui participent à l'heritage seront dans une seule table
+  personne(id,nom_complet,role,login,password,grade,matricule,adresse,sexe)
+ -Joined :Creer autant de table que de classes mais la clé de la classes Mére migre comme cle etrangé au niveau de la classe fille
+ //il exite une trois methode (on ferait des recherche là dessus)
+personne(id,nom_complet,role)
+User(login,password,#personne_id)
+Professeur(grade,#personne_id)
+Rp(#personne_id)
+AC(#personne_id)
+Etudiant(matricule,sexe,adresse,#personne_id)
+
+OneToMany->ManyToOne
+1->*    //OneToMany
+*->1    //ManyToOne
+
+MLD =>c'est le clé du faible qui va migrer dans le fort
+annee_scolaire(id,libelle)
+inscription(annee_id)
+
+ManyToMany -> ManyToMany
+classe(id,libelle,filiere,niveau)
+professeur_classe(#classe_id,#personne_id)
+
