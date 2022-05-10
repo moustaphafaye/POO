@@ -1,10 +1,30 @@
 <?php
 interface IModel{
-    public function insert():int;
+    //abstraintes
+    //instances
     public function update():int;
-    public function delete():int;
-    public function findAll():array;
-    public function findById():objet|null;
-    public function findBy(string $sql,array $data=null,$single=false ):objet|null;
+    public function insert():int;
+
+    //static
+    public static function delete(int $id):int;
+    public static function findAll():array;
+    public static function findById(int $id):objet|null;
+    public static  function findBy(string $sql,array $data=null,$single=false ):objet|null|array;
+
+
+
+   
+    //select * from personne where nom_complet like "Diop";
+    //select * from personne where login=limzo and password=limzo;
 
 }
+
+//Methode static est une methode de classe 
+//Methode d'instance est est une methode d'objet
+//etat de l'Objet => valeurs de ses attributs
+/**
+ * $obj=new Classe();
+ * 
+ * $obj->methode();
+ * Classe::methode();
+ */

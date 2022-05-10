@@ -44,7 +44,15 @@ abstract class User extends Personne{
 
         return $this;
     }
+    public static function findUserByLoginAndPassword(strint $login,string $password):object|null{
+        return self::findBy("select * from personne where login=? and password=?",[$login,$password],true);
+    }
 
+     public static function findAll():array{
+        $sql="select * from ".self::$table." where role not like 'ROLE_PROFESSEUR'";
+        echo $sql;
+        return[];
+    }
     /**
      * Get the value of role
      */ 

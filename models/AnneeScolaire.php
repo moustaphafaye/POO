@@ -1,5 +1,5 @@
 <?php
-class AnneeScolaire {
+class AnneeScolaire extends Model {
    // fonctions navigationnels
 
 
@@ -7,5 +7,6 @@ class AnneeScolaire {
    //OneToMany 
    public function inscriptions():array{
     return [];
-}
+    }
+     
 }

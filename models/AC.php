@@ -14,8 +14,15 @@ class AC extends User{
     }
 
     public function __construct(){
-       $this->role = "ROLE_AC";
+       self::$role = "ROLE_AC";
        $this-> inscription=[];
     
     }
-}
+    public static function findAll():array{
+        $sql="select * from ".self::$table." where role like '".self::$role."'";
+        return[];
+    }
+    //select * from personne where nom_complet like "Diop";
+    //select * from personne where login=limzo and password=limzo;
+
+} 

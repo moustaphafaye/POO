@@ -4,7 +4,7 @@ class Etudiant extends User{
     private string $sexe;
     private string $adresse;
     public function __construct(){
-       $this->role = "ROLE_ETUDIANT";  
+       self::$role = "ROLE_ETUDIANT";  
     }
 
     /**
@@ -65,5 +65,10 @@ class Etudiant extends User{
         $this->adresse = $adresse;
 
         return $this;
+    }
+    public static function findAll():array{
+        $sql="select * from ".self::$table." where role like '".self::$role."'";
+        echo $sql;
+        return[];
     }
 }

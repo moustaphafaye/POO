@@ -1,8 +1,8 @@
 <?php
-abstract class Personne{
+abstract class Personne extends Model{
     protected int $id;
     protected string $nomComplet;
-    protected string $role; 
+    protected static string $role; 
     //Attribut de classes ou static
     private static int $nbrePersonne;
 
@@ -10,7 +10,7 @@ abstract class Personne{
     //le constructeur
     public function __construct()
     {
-        
+        parent::$table="personne";
     }
     //les getters
     public function getId():int{
@@ -54,4 +54,9 @@ abstract class Personne{
 
         return $this;
     }
+    //la redefinition
+    // public static function findAll():array{
+    //     $sql="select * from personne where role like '".self::$role."'";
+    //     return[];
+    // }
 }
