@@ -1,0 +1,22 @@
+{
+    "name": "moustapha/poo",
+    "autoload": {
+        "psr-4": {
+            "App\\Core\\": "core/",
+            "App\\Model\\": "models/",
+            "App\\Controller\\": "controllers/",
+            "App\\Exception\\": "exceptions/"
+
+
+        }
+    },
+    "authors": [
+        {
+            "name": "moustapha",
+            "email": "moustaphafaye470@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/validator": "^6.0"
+    }
+}

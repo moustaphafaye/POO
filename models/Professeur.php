@@ -1,4 +1,6 @@
 <?php
+namespace App\Model;
+use App\Core\DataBase;
 class Professeur extends Personne {
 
     //fonctions navigationels
@@ -6,30 +8,26 @@ class Professeur extends Personne {
     private string $grade;
     // private string $adresse;
     public function __construct(){
-        self::$role = "ROLE_PROFESSEUR";  
+        parent::$role = "ROLE_PROFESSEUR";  
      }
 
     public function classes():array{
         return [];
     }
-    public function insert():int{
-        return 0; 
-    }
+
+    
+
+
+    
     public function update():int{
         return 0;
     }
-    public function delete():int{
-        return 0; 
-    }
+    
     // public function findAll():array{
     //     return[];
     // }
-    public function findById():objet|null{
-        return null;
-    }
-    public function findBy(string $sql,array $data=null,$single=false ):objet|null|array{
-        return null;
-    }
+    
+    
 //insert()
 //delete()
 //update()
@@ -60,9 +58,20 @@ class Professeur extends Personne {
         return $this;
     }
     public static function findAll():array{
-        $sql="select * from ".self::$table." where role like '".self::$role."'";
-        echo $sql;
-        return[];
+        $sql="select id  ,`nom_complet`,`role`,`grade` from ".parent::table()." where role like 'ROLE_PROFESSEUR'"; 
+        return parent::findBy($sql,[parent::table()]);
     }
+    public function insert():int{
+        
+       $db=parent::database();
+       
+        $db->connexionDB();
+        //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
+       $sql="INSERT INTO `personne` (`nom_complet`,`role`,`grade`) VALUES (?,?,?)";
     
+        $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
+        $db->closeConnexion(); 
+        return $result;
+      
+    }
 } 

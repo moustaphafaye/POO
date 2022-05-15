@@ -1,15 +1,16 @@
 <?php
+namespace App\Core;
 interface IModel{
     //abstraintes
     //instances
     public function update():int;
     public function insert():int;
 
-    //static
+    //static 
     public static function delete(int $id):int;
     public static function findAll():array;
-    public static function findById(int $id):objet|null;
-    public static  function findBy(string $sql,array $data=null,$single=false ):objet|null|array;
+    public static function findById(int $id):object|null;
+    public static  function findBy(string $sql,array $data=null,$single=false ):object|null|array;
 
 
 

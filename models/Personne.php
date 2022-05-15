@@ -1,4 +1,6 @@
 <?php
+namespace App\Model;
+use App\Core\Model;
 abstract class Personne extends Model{
     protected int $id;
     protected string $nomComplet;
@@ -6,11 +8,10 @@ abstract class Personne extends Model{
     //Attribut de classes ou static
     private static int $nbrePersonne;
 
-
     //le constructeur
     public function __construct()
     {
-        parent::$table="personne";
+       
     }
     //les getters
     public function getId():int{
@@ -20,7 +21,7 @@ abstract class Personne extends Model{
         return $this->nomComplet; 
     }
     public static function getNbrePersonne():int{
-        return selt::$nbrePersonne;
+        return self::$nbrePersonne;
     }
     //les setters
     public function setId(int $id):self{
