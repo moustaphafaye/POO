@@ -49,19 +49,19 @@ abstract class User extends Personne{
         return parent::findBy("select * from personne where login=? and password=?",[$login,$password],true);
     }
 
-     public static function findAll():array{
+    //  public static function findAll():array{
        
-            // $db=parent::database();
-            // $db->connexionDB();
-            // $sql="select id  ,`nom_complet`,`role`,`grade` from ".parent::table()." where role not like 'ROLE_PROFESSEUR'";
-            // $results=$db->executeSelect($sql);
-            // $db->closeConnexion(); 
-            // return $results;
+    //         // $db=parent::database();
+    //         // $db->connexionDB();
+    //         // $sql="select id  ,`nom_complet`,`role`,`grade` from ".parent::table()." where role not like 'ROLE_PROFESSEUR'";
+    //         // $results=$db->executeSelect($sql);
+    //         // $db->closeConnexion(); 
+    //         // return $results;
 
-             $sql="select * from ".parent::table()." where role not like 'ROLE_PROFESSEUR'";
-            return parent::findBy($sql);
+    //          $sql="select * from ".parent::table()." where role not like 'ROLE_PROFESSEUR'";
+    //         return parent::findBy($sql);
         
-    }
+    // }
     /**
      * Get the value of role
      */ 

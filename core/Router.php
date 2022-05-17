@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\Exception\RouteNotFoundException;
+use App\Controller\SecurityController;
 
 class Router{
     private Request $request;
@@ -16,11 +17,24 @@ class Router{
 
     public function resolve(){
         $uri="/".$this->request->getUri()[0];
-        // dd($uri);
+    
         if(isset($this->routes[$uri])){
-            dd("route exite");
-            }else{
+                $route=$this->routes[$uri];
+                [$ctrClass,$action]=$route;
+                // [$ctrClass]=$route[0]; 
+                // [$action]=$route[1];
+                // dd("App\\Controller\\".$ctrClass);
+                if(class_exists($ctrClass) && method_exists($ctrClass,$action)){
+                    $ctrl=new $ctrClass($this->request);//$ctrl=new SecurityController()
+                    // $ctrl->{$action()};//$ctrl->authentificatio()
+                    call_user_func(array($ctrl,$action));
+                }else{
                 throw new RouteNotFoundException();
+                }
+            }else{
+                $obj = new SecurityController($this->request);
+                call_user_func(array($obj,"authentification"));
+                // throw new RouteNotFoundException();
             }
     }
 }

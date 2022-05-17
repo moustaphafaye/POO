@@ -1,35 +1,14 @@
 <?php
 //inclusion du fichier  de la classe
 //composer à faisant l'autoloading
-use App\Controller\SecurityController;
-use App\Controller\ClasseController;
-use App\Core\Router ;
 
-use App\Exception\RouteNotFoundException;
-
-
-
-
+use App\Model\Professeur;
 
 require("../vendor/autoload.php");
 require_once("../core/fonction.php");
-$router=new Router();
-$router->route('/login',[SecurityController::class,"authentification"]);
-$router->route('/logout',[SecurityController::class,"deconnexion"]);
-$router->route('/classes',[ClasseController::class,"listerClasse"]);
-$router->route('/add-classe',[ClasseController::class,"creerClasse"]);
 
-// $router->resolve();
+require_once("../routes/route.web.php");
 
-
- try{
-    //essaie de resoude la route
- $router->resolve();
-
- }catch(RouteNotFoundException $ex){
-     //Capture l'exception et affiche
-     echo $ex->message;
- }
 
 // require_once("../models/User.php");
 // require_once("../models/AC.php");

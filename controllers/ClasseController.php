@@ -1,7 +1,11 @@
 <?php
 namespace App\controller;
-class ClasseController{
 
+use App\Core\Controller;
+use App\Core\Request;
+class ClasseController extends Controller{
+
+    
     public function listerClasse(){
 
     }

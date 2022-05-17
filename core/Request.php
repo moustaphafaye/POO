@@ -4,7 +4,7 @@ class Request{
     
    public function getUri(){
 
-    $url=explode("/",$_SERVER['REQUEST_URI']);
+    $url=explode("/POO/public/index.php/",$_SERVER['REQUEST_URI']);
     unset($url[0]);
       return array_values($url); 
    } 

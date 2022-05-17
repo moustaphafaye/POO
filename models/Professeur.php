@@ -14,7 +14,10 @@ class Professeur extends Personne {
     public function classes():array{
         return [];
     }
-
+    public static function getRole()
+    {
+        return self::$role='ROLE_PROFESSEUR';
+    }
     
 
 
@@ -57,10 +60,7 @@ class Professeur extends Personne {
 
         return $this;
     }
-    public static function findAll():array{
-        $sql="select id  ,`nom_complet`,`role`,`grade` from ".parent::table()." where role like 'ROLE_PROFESSEUR'"; 
-        return parent::findBy($sql,[parent::table()]);
-    }
+    
     public function insert():int{
         
        $db=parent::database();

@@ -10,13 +10,14 @@ class DataBase  {
         
 
             try {
-                $this->pdo=new \PDO("mysql:host=localhost;dbname=POO_ODC","moustapha","limzo");
+                $this->pdo=new \PDO("mysql:host=localhost;dbname=POO_ODC","root","");
            // $bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
         //
         }catch(\PDOException $execption){
             
-            $execption->getMessage();
+           echo  $execption->getMessage();
+            
             exit('Erreur de Connexion');
 
         }

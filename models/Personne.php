@@ -13,6 +13,7 @@ abstract class Personne extends Model{
     {
        
     }
+
     //les getters
     public function getId():int{
         return $this->id; 
@@ -39,9 +40,9 @@ abstract class Personne extends Model{
     /**
      * Get the value of role
      */ 
-    public function getRole()
+    public static function getRole()
     {
-        return $this->role;
+        return self::$role='';
     }
 
     /**
@@ -55,9 +56,8 @@ abstract class Personne extends Model{
 
         return $this;
     }
-    //la redefinition
-    // public static function findAll():array{
-    //     $sql="select * from personne where role like '".self::$role."'";
-    //     return[];
-    // }
+    public static function findAll():array{
+        $sql="select * from ".parent::table()." where role like ?"; 
+        return parent::findBy($sql,[get_called_class()::getRole()]);
+    }
 }

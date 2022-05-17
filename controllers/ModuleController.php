@@ -1,6 +1,7 @@
 <?php
-namespace App\controller;
-class ProfesseurController{
+namespace App\Controller;
+use App\Core\Controller;
+class ProfesseurController extends Controller{
 
     public function affecterModule(){
 
