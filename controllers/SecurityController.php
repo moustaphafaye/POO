@@ -7,7 +7,9 @@ class SecurityController extends Controller{
     public function authentification(){
         //1-Affichage du formulaire de connexion=>GET
         if($this->request->isGet()){
+
             $this->render('security/login.html.php');
+
         }
 
         //2-traitement apres soumission => POST
@@ -15,6 +17,7 @@ class SecurityController extends Controller{
     public function deconnexion(){
 
         $this->redirecToRoute("login");
+        
     }
 
 }

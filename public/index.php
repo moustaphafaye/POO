@@ -2,7 +2,16 @@
 //inclusion du fichier  de la classe
 //composer à faisant l'autoloading
 
+use App\Model\AC;
 use App\Model\Professeur;
+use App\Model\Module;
+use App\Model\AnneeScolaire;
+use App\Model\RP;
+use App\Model\Classe;
+
+
+
+
 
 require("../vendor/autoload.php");
 require_once("../core/fonction.php");
@@ -13,11 +22,18 @@ require_once("../routes/route.web.php");
 // require_once("../models/User.php");
 // require_once("../models/AC.php");
 // require_once("../models/Inscription.php");
+// $rp=new Classe();
+// $rp->setLibele("PHP");
+// $rp->setFiliere("informatique");
+// $rp->setNiveau("M1");
+// $rp->insert();
 
-// $ac=new AC();
-// $ac->setNomComplet("limzo FAYE");
- // $ac->setPassword("zo");
-// $ac->insert();
+// $rp= new RP();
+// $rp->setNomComplet("Moussa faye");
+// $rp->setLogin("mou3@gmail.com");
+// $rp->setPassword("lomzo");
+// $rp->insert();
+// dd(RP::getRole());
 
 
 

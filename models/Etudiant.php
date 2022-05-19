@@ -67,6 +67,22 @@ class Etudiant extends User{
 
         return $this;
     }
+
+    public function insert():int{
+        
+        $db=parent::database();
+        
+         $db->connexionDB();
+         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
+        $sql="INSERT INTO personne (`nom_complet`,`role`,`grade`) VALUES (?,?,?)";
+     
+         $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
+         $db->closeConnexion(); 
+         return $result;
+       
+     }
+
+
     public static function findAll():array{
         $sql="select * from ".parent::table()." where role like '".self::$role."'";
         echo $sql;

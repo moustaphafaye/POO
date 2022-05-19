@@ -8,8 +8,12 @@ class ClasseController extends Controller{
     
     public function listerClasse(){
 
+        if($this->request->isGet()){   
+            $this->render('classe/listerClasse.html.php');
+        }
     }
      public function creerClasse(){
+
         
     }
     

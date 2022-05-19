@@ -16,15 +16,19 @@ class Router{
     }
 
     public function resolve(){
+// var_dump($this->request->getUri()[0]);
         $uri="/".$this->request->getUri()[0];
     
         if(isset($this->routes[$uri])){
                 $route=$this->routes[$uri];
                 [$ctrClass,$action]=$route;
+
                 // [$ctrClass]=$route[0]; 
                 // [$action]=$route[1];
-                // dd("App\\Controller\\".$ctrClass);
+                //  dd($action);
+
                 if(class_exists($ctrClass) && method_exists($ctrClass,$action)){
+                    
                     $ctrl=new $ctrClass($this->request);//$ctrl=new SecurityController()
                     // $ctrl->{$action()};//$ctrl->authentificatio()
                     call_user_func(array($ctrl,$action));

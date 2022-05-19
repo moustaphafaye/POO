@@ -6,7 +6,7 @@ $professeurs = Professeur::findAll();
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Nom Complet</th>g
+            <th>Nom Complet</th>
             <th>Grade</th>
         </tr>
     </thead>

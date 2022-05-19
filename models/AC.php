@@ -36,9 +36,8 @@ class AC extends User{
          $db->connexionDB();
          //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
         $sql="INSERT INTO `personne` (`nom_complet`,`role`,`login`,`password`) VALUES (?,?,?,?)";
-     var_dump(parent::$role);
          $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->login,$this->password]);
-         var_dump($result);die;
+        
          $db->closeConnexion(); 
          return $result;
        

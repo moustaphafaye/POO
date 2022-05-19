@@ -11,7 +11,7 @@ abstract class Personne extends Model{
     //le constructeur
     public function __construct()
     {
-       
+        // parent::$role = "ROLE_RP";
     }
 
     //les getters

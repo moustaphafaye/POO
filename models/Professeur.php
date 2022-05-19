@@ -67,7 +67,7 @@ class Professeur extends Personne {
        
         $db->connexionDB();
         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
-       $sql="INSERT INTO `personne` (`nom_complet`,`role`,`grade`) VALUES (?,?,?)";
+       $sql="INSERT INTO personne (`nom_complet`,`role`,`grade`) VALUES (?,?,?)";
     
         $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
         $db->closeConnexion(); 

@@ -10,7 +10,8 @@ class DataBase  {
         
 
             try {
-                $this->pdo=new \PDO("mysql:host=localhost;dbname=POO_ODC","root","");
+                $this->pdo=new \PDO("mysql:dbname=PR_POO_P4;host=127.0.0.1:3307","root","");
+                
            // $bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
         //

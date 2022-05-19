@@ -3,8 +3,9 @@ namespace App\Core;
 class Request{
     
    public function getUri(){
-
-    $url=explode("/POO/public/index.php/",$_SERVER['REQUEST_URI']);
+// var_dump($_SERVER['REQUEST_URI']);die;
+    $url=explode("/",$_SERVER['REQUEST_URI']);
+    //var_dump($url);die;
     unset($url[0]);
       return array_values($url); 
    } 

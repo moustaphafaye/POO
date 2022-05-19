@@ -57,4 +57,17 @@ class Module extends Model{
 
         return $this;
     }
+    public function insert():int{
+        
+        $db=parent::database();
+        
+         $db->connexionDB();
+         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
+        $sql="INSERT INTO module (`libelleModule`) VALUES (?)";
+     
+         $result=$db->executeUpdate($sql,[$this->libelleModule]);
+         $db->closeConnexion(); 
+         return $result;
+       
+     }
 }
