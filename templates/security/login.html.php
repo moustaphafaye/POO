@@ -18,6 +18,8 @@ use App\Core\Constantes;
       <div class="col-md-8 col-lg-7 col-xl-6">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
           class="img-fluid" alt="Phone image">
+          <!-- <img src="<?=Constantes::WEB_ROOT."images/acceuil.jpg"?>"
+          class="img-fluid" alt="Phone image"> -->
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
       <form name="fo" method="post" action="<?=Constantes::WEB_ROOT."login"?>" >

@@ -14,7 +14,9 @@ class ClasseController extends Controller{
     }
      public function creerClasse(){
 
-        
+        if($this->request->isGet()){   
+            $this->render('classe/creerClasse.html.php');
+        }
     }
     
 }

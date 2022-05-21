@@ -2,8 +2,9 @@
 use App\Model\Classe;
 $classe = Classe::findAll();
 ?>
+<div class="container mt-5">
 
-<table class="table table-hover">
+<table class="table table-hover ">
     <thead>
         <tr>
             <th>libele</th>
@@ -25,3 +26,4 @@ $classe = Classe::findAll();
         ?>
     </tbody>
 </table>
+</div>

@@ -9,6 +9,8 @@ use App\Model\AnneeScolaire;
 use App\Model\RP;
 use App\Model\Classe;
 use App\Model\Etudiant;
+use App\Model\Demande;
+
 
 
 
@@ -20,6 +22,11 @@ require_once("../core/fonction.php");
 
 require_once("../routes/route.web.php");
 
+// $dem=new Demande();
+// $dem->setMotif("Je suis hors du pays");
+// $dem->setDate('2023-08-20 10:15:00');
+// $dem->setEtat("valider");
+// $dem->insert();
 // $et=new Etudiant();
 // $et->setNomComplet('koni js');
 // $et->setLogin('konijs@gmail.com');

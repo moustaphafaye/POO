@@ -6,7 +6,7 @@ use DateTime;
 class Demande extends Model{
     private int $id;
     private string $motif;
-    private DateTime $date;
+    // private DateTime $date;
     private string $etat;
 
     /**
@@ -91,4 +91,17 @@ class Demande extends Model{
 
         return $this;
     }
+    public function insert():int{
+        
+        $db=parent::database();
+        
+         $db->connexionDB();
+         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
+        $sql="INSERT INTO demande (`motif`,`date`,`etat`) VALUES (?,?,?)";
+     
+         $result=$db->executeUpdate($sql,[$this->motif,$this->date,$this->etat]);
+         $db->closeConnexion(); 
+         return $result;
+       
+     }
 }

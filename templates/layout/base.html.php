@@ -42,9 +42,8 @@ $rr = new Role();
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <!-- <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."lister-professeur"?>"> Lister Professeur </a></button></li> -->
-                <li><button class="dropdown-item" type="button">Ajouter Professeur</button></li>
-                <li><button class="dropdown-item" type="button">Modifier Professeur</button></li>
-                <li><button class="dropdown-item" type="button">Supprimer Professeur</button></li>
+                <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."ajouter-professeur"?>"> Ajouter Professeur </a></button></li>
+                
 
                 </ul>
       
@@ -52,14 +51,14 @@ $rr = new Role();
         </div>
         <?php endif?> 
 
-        <?php $ac=new Role();if($ac::isAC()):?> 
+        <?php $ac=new Role();if($ac::isAC() || $ac::isRP()):?> 
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle bg-Danger" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle bg-Danger " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             Classse
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."lister-professeur"?>">Lister Classe</a> </button></li>
-                <li><button class="dropdown-item" type="button">Creer Classe</button></li>
+                <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."lister-classe"?>">Lister Classe</a> </button></li>
+                <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."creer-classe"?>"> Creer Classe </a></button></li>
                 <li><button class="dropdown-item" type="button">Modifier Professeur</button></li>
                 <li><button class="dropdown-item" type="button">lister CLasse Professeur</button></li>
 
