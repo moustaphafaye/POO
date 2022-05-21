@@ -11,10 +11,13 @@ class Controller  {
     public function render(string $path,array $data=[]){
         $data["Constantes"]=Constantes::class;
         $data["request"]=$this->request;
+        // require_once(Constantes::ROOT()."templates/".$path);
+// echo Constantes::ROOT()."templates/".$path;
         ob_start();
         extract($data);
         require_once(Constantes::ROOT()."templates/".$path);
         $content_for_views=ob_get_clean();
+        
         // var_dump(Constantes::ROOT());die;
         require_once(Constantes::ROOT()."templates/layout/base.html.php");
 

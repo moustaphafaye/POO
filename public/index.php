@@ -8,6 +8,8 @@ use App\Model\Module;
 use App\Model\AnneeScolaire;
 use App\Model\RP;
 use App\Model\Classe;
+use App\Model\Etudiant;
+
 
 
 
@@ -18,7 +20,13 @@ require_once("../core/fonction.php");
 
 require_once("../routes/route.web.php");
 
-
+// $et=new Etudiant();
+// $et->setNomComplet('koni js');
+// $et->setLogin('konijs@gmail.com');
+// $et->setPassword('123Z');
+// $et->setMatricule('M123');
+// $et->setSexe('M');
+// $et->insert();
 // require_once("../models/User.php");
 // require_once("../models/AC.php");
 // require_once("../models/Inscription.php");
@@ -27,12 +35,18 @@ require_once("../routes/route.web.php");
 // $rp->setFiliere("informatique");
 // $rp->setNiveau("M1");
 // $rp->insert();
+/* $ac= new AC();
+$ac->setNomComplet("Moussa faye");
+$ac->setLogin("mouyyyy3@gmail.com");
+$ac->setPassword("lomzo");
+$ac->insert(); */
 
-// $rp= new RP();
+
+//  $rp= new RP();
 // $rp->setNomComplet("Moussa faye");
-// $rp->setLogin("mou3@gmail.com");
+// $rp->setLogin("mouyaaaaaaa3@gmail.com");
 // $rp->setPassword("lomzo");
-// $rp->insert();
+// $rp->insert(); 
 // dd(RP::getRole());
 
 

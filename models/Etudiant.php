@@ -1,5 +1,6 @@
 <?php
 namespace App\Model;
+use App\Core\Model;
 class Etudiant extends User{
     private string $matricule;
     private string $sexe;
@@ -74,9 +75,9 @@ class Etudiant extends User{
         
          $db->connexionDB();
          //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
-        $sql="INSERT INTO personne (`nom_complet`,`role`,`grade`) VALUES (?,?,?)";
+        $sql="INSERT INTO personne (`nom_complet`,`login`,`password`,`role`,`matricule`,`adresse`,`sexe`) VALUES (?,?,?,?,?,?,?)";
      
-         $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
+         $result=$db->executeUpdate($sql,[$this->nomComplet,$this->login,$this->password,parent::$role,$this->matricule,$this->sexe]);
          $db->closeConnexion(); 
          return $result;
        

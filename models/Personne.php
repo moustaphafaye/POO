@@ -42,7 +42,7 @@ abstract class Personne extends Model{
      */ 
     public static function getRole()
     {
-        return self::$role='';
+        return self::$role;
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class Personne extends Model{
      */ 
     public function setRole($role)
     {
-        $this->role = $role;
+        $this->role="";
 
         return $this;
     }

@@ -1,56 +1,56 @@
+<?php
+use App\Core\Constantes;
+?>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 
+    <section class="vh-70">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+      <form name="fo" method="post" action="<?=Constantes::WEB_ROOT."login"?>" >
+       
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Email address</label>
 
-<!-- <div class="card">
-    <div class="card-body">
-        <h4 class="card-title">Formulaire de connexion</h4>
-        <p class="card-text">
-        <form>
-            <div class="mb-1">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" placeholder="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-         </form>
-        </p>
+            <input type="email"name="login" id="form1Example13" class="form-control form-control-lg" />
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example23">Password</label>
+
+            <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" />
+          </div>
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Authentification</button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">KONI</p>
+          </div>
+        </form> 
+      </div>
     </div>
-</div> -->
-<!-- <style>
-         *{
-            font-family:arial;
-         }
-         body{
-            margin:20px;
-         }
-         input{
-            border:solid 1px #2222AA;
-            margin-bottom:10px;
-            padding:16px;
-            outline:none;
-            border-radius:6px;
-         }
-         .erreur{
-            color:#CC0000;
-            margin-bottom:10px;
-         }
-      </style>
-   </head> -->
-   <!-- <body onLoad="document.fo.login.focus()"> -->
-   <div class="erreur">
-                <h1>Authentification</h1>
-      
-                <form name="fo" method="post" action="http://localhost:8002/">
-                    
-                    <input class="input" type="text" name="login" placeholder="Login" /><br />
-                    <input class="input" type="password" name="password" placeholder="Mot de passe" /><br />
-                    <input type="submit" name="valider" value="S'authentifier" />
-                </form>
-    </div>
+  </div>
+</section>
+</body>
+</html>
+    
