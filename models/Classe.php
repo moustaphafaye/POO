@@ -6,7 +6,7 @@ class Classe extends Model {
     //fonctions navigationels
     //ManyToOne avec professeur
     private int $id;
-    private string $libelle;
+    private string $libele;
     private string $filiere;
     private string $niveau;
    
@@ -116,4 +116,20 @@ class Classe extends Model {
          return $result;
        
      }
+     public function update():int{
+        $db=parent::database();
+         $db->connexionDB();
+
+        $sql= 'UPDATE classe SET libele = :libele, filiere = :filiere, niveau = :niveau WHERE id = :id';
+        $data=[ 'id' => $this->id,
+        'libele' => $this->libele,
+        'filiere' => $this->filiere,
+        'niveau' => $this->niveau];
+        $result=$db->executeUpdate($sql,$data);
+         $db->closeConnexion(); 
+
+        // $sql="INSERT INTO classe (`libele`,`filiere`,`niveau`) VALUES (?,?,?)";
+        // $rql=Update classe set Téléphone=’772062042’, Adresse=’Parcelles’where Matricule=’004A3’ ;
+        return $result;
+    }
 }

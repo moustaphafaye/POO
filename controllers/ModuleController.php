@@ -11,8 +11,9 @@ class ModuleController extends Controller{
                 $this->render('module/creerModule.html.php');
             }
             if($this->request->isPost()){
+                
                 $mod=new Module();
-                $mod->setLibelleModule($_POST['libelle']);
+                $mod->setLibelleModule($_POST['libelleModule']);
                 $mod->insert();
                 
                 $this->render('module/listerModule.html.php');

@@ -1,6 +1,4 @@
-<?php
-use App\Core\Constantes;
-?>
+
 <section class="vh-70">
     
   <div class="container py-5 h-100">
@@ -8,7 +6,7 @@ use App\Core\Constantes;
 
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="<?=Constantes::WEB_ROOT."images/module.jpg"?>"
+                <img src="<?=$Constantes::WEB_ROOT."images/module.jpg"?>"
                 class="img-fluid  w-40 bg-success mt-2 " alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">

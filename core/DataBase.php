@@ -46,6 +46,6 @@ class DataBase  {
         $query=$this->pdo->prepare($sql);
         $query->execute($data);
         //insert => retourner l'id generer
-       return $query->rowCount(); 
+       return $query->rowCount();
     }
 }

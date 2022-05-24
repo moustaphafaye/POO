@@ -7,9 +7,9 @@ use App\Model\Professeur;
 use App\Model\Module;
 use App\Model\AnneeScolaire;
 use App\Model\RP;
-use App\Model\Classe;
+
 use App\Model\Etudiant;
-use App\Model\Demande;
+use App\Model\Classe;
 
 
 
@@ -19,7 +19,15 @@ use App\Model\Demande;
 
 require("../vendor/autoload.php");
 require_once("../core/fonction.php");
+// $classe=new Classe();
+// $classe->setId("2");
+// $classe->setLibele("Master");
+// $classe->setFiliere("Rereau");
+// $classe->setNiveau("M2");
+// $classe->update();
+
 require_once("../routes/route.web.php");
+
 // $dem=new Demande();
 // $dem->setMotif("Je suis hors du pays");
 // $dem->setDate('2023-08-20 10:15:00');

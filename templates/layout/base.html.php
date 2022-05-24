@@ -61,7 +61,6 @@ $role = new Role();
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."lister-classe"?>">Lister Classe</a> </button></li>
                 <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."creer-classe"?>"> Creer Classe </a></button></li>
-                <li><button class="dropdown-item" type="button">Modifier Professeur</button></li>
                 <li><button class="dropdown-item" type="button">lister CLasse Professeur</button></li>
 
                 </ul>

@@ -22,12 +22,13 @@ $router->route('/lister-demande',[DemandeController::class,"listerDemande"]);
 
 $router->route('/login',[SecurityController::class,"authentification"]);
 $router->route('/logout',[SecurityController::class,"deconnexion"]);
-$router->route('/classes',[ClasseController::class,"listerClasse"]);
 $router->route('/personne',[PersonneController::class,"lister"]);
 $router->route('/lister-professeur',[ProfesseurController::class,"listerProfesseur"]);
 $router->route('/lister-module',[ModuleController::class,"listerModule"]);
 $router->route('/creer-module',[ModuleController::class,"creerModule"]);
 $router->route('/lister-classe',[ClasseController::class,"listerClasse"]);
+$router->route('/modifier-classe',[ClasseController::class,"modifierClasse"]);
+
 $router->route('/creer-classe',[ClasseController::class,"creerClasse"]);
 $router->route('/ajouter-professeur',[ProfesseurController::class,"ajouterProfesseur"]);
 $router->route('/inscrire-etudiant',[InscriptionController::class,"inscriptionEtudiant"]);

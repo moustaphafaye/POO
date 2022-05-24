@@ -8,7 +8,7 @@ use Digia\InstanceFactory\InstanceFactory;
 
 class Controller  {
 
-    protected Request $Request;
+    protected Request $request;
     protected Session $session;
     public function __construct(Request $request)
     {
