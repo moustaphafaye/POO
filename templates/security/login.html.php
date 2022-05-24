@@ -7,12 +7,14 @@ use App\Core\Constantes;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?=Constantes::WEB_ROOT."css/style.css"?>">
+
     <title>Document</title>
 </head>
 <body>
     
 
-    <section class="vh-70">
+  <section class="vh-70">
   <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class="col-md-8 col-lg-7 col-xl-6">
@@ -22,7 +24,8 @@ use App\Core\Constantes;
           class="img-fluid" alt="Phone image"> -->
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-      <form name="fo" method="post" action="<?=Constantes::WEB_ROOT."login"?>" >
+      <form id="formulaire" class="bg-success"    name="fo" method="post" action="<?=Constantes::WEB_ROOT."login"?>" >
+      <h2 class="au">Authentification</h2>
        
           <!-- Email input -->
           <div class="form-outline mb-4">

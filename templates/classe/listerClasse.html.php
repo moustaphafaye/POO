@@ -3,7 +3,7 @@ use App\Model\Classe;
 $classe = Classe::findAll();
 ?>
 <div class="container mt-5">
-
+ <h1 class="hh1">Lister Classe</h1>
 <table class="table table-hover ">
     <thead>
         <tr>

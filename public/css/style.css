@@ -29,4 +29,39 @@
     outline:none;
     border-radius:6px;
  }
- 
+ img{
+    border-radius: 2em;
+ }
+ #formulaire{
+    height: 70vh;
+    padding: 2em;
+    border-radius: 1em;
+ }
+ .au{
+    color: white;
+    text-align: center;
+ }
+ #listerprof{
+    background-color: #686888;
+    border-radius: 1em;
+   
+ }
+ .dis{
+    display: flex;
+   
+ }
+ .separe{
+   margin: 0 1em 0 0;
+ }
+ .contenue{
+    
+    height: 90vh;
+    margin: 0 10%;
+    border: 2px solid rgb(105, 102, 102);
+    border-radius: 1em;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.6), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ }
+ .hh1{
+    text-align: center;
+    font-weight: bolder;
+ }

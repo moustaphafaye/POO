@@ -19,9 +19,7 @@ use App\Model\Demande;
 
 require("../vendor/autoload.php");
 require_once("../core/fonction.php");
-
 require_once("../routes/route.web.php");
-
 // $dem=new Demande();
 // $dem->setMotif("Je suis hors du pays");
 // $dem->setDate('2023-08-20 10:15:00');

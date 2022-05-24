@@ -1,6 +1,10 @@
 
+
+
 <section class="vh-70">
   <div class="container py-5 h-100">
+ <h1 class="hh1">Formuler Demande  </h1>
+
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-8 col-lg-7 col-xl-6">
                 <img src="<?=$Constantes::WEB_ROOT."images/classe.jpg"?>"
@@ -11,21 +15,21 @@
                 
                     <!-- Email input -->
                     <div class="form-outline mb-4  ">
-                        <label class="form-label" for="form1Example13">libelle</label>
+                        <label class="form-label" for="form1Example13">Motif</label>
 
-                        <input type="email"name="login" id="form1Example13" class="form-control form-control-lg" />
+                        <input name="motif" id="form1Example13" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form1Example13">Filiere</label>
+                        <label class="form-label" for="form1Example13">date</label>
 
-                        <input type="email"name="login" id="form1Example13" class="form-control form-control-lg" />
+                        <input name="login" id="form1Example13" class="form-control form-control-lg" />
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form1Example23">Niveau</label>
 
-                        <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" />
+                        <input  name="niveau" id="form1Example23" class="form-control form-control-lg" />
                     </div>
 
                     <!-- <div class="d-flex justify-content-around align-items-center mb-4">
