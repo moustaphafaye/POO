@@ -1,8 +1,10 @@
 <?php
 namespace App\Core;
 
-use App\Exception\RouteNotFoundException;
+use App\Core\Role;
+use App\Core\Request;
 use App\Controller\SecurityController;
+use App\Exception\RouteNotFoundException;
 
 class Router {
     private Request $request;
@@ -21,7 +23,10 @@ class Router {
 
         $uri="/".$this->request->getUri()[0];
         if(isset($this->routes[$uri])){
-
+                // if(!(Role::isconnect())){
+                // header("location:".Constantes::WEB_ROOT.'login');
+                    
+                // } 
                 $route=$this->routes[$uri];
                 [$ctrClass,$action]=$route;
 
@@ -41,6 +46,9 @@ class Router {
             $obj = new SecurityController($this->request);
             call_user_func(array($obj,"authentification"));
             // throw new RouteNotFoundException();
+            header("location:login");
+            
+
         }
     }
 }

@@ -59,9 +59,11 @@ class SecurityController extends Controller{
     }
 
     public function deconnexion(){
-        session_destroy();
-        $this->redirecToRoute("login");
-        exit();
+        session_destroy();  
+         session_unset();
+         $this->redirecToRoute("login"); 
+         exit();    
+        
     }
 
 }

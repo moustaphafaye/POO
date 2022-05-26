@@ -14,7 +14,7 @@ use App\Core\Constantes;
 <body>
     
 
-  <section class="vh-70">
+  <section class="vh-70 mt-5">
   <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class="col-md-8 col-lg-7 col-xl-6">
@@ -24,7 +24,7 @@ use App\Core\Constantes;
           class="img-fluid" alt="Phone image"> -->
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-      <form id="formulaire" class="bg-success"    name="fo" method="post" action="<?=Constantes::WEB_ROOT."login"?>" >
+      <form id="formulaire" class="bg-secondary"    name="fo" method="post" action="/login" >
       <h2 class="au">Authentification</h2>
        
           <!-- Email input -->
@@ -46,7 +46,7 @@ use App\Core\Constantes;
           </div>
 
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Authentification</button>
+          <button type="submit" class="btn btn-outline-dark  btn-lg btn-block">Authentification</button>
 
           <div class="divider d-flex align-items-center my-4">
             <p class="text-center fw-bold mx-3 mb-0 text-muted">KONI</p>

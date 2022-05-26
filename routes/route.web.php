@@ -28,6 +28,8 @@ $router->route('/lister-module',[ModuleController::class,"listerModule"]);
 $router->route('/creer-module',[ModuleController::class,"creerModule"]);
 $router->route('/lister-classe',[ClasseController::class,"listerClasse"]);
 $router->route('/modifier-classe',[ClasseController::class,"modifierClasse"]);
+$router->route('/supprime-classe',[ClasseController::class,"supprimerClasse"]);
+
 
 $router->route('/creer-classe',[ClasseController::class,"creerClasse"]);
 $router->route('/ajouter-professeur',[ProfesseurController::class,"ajouterProfesseur"]);

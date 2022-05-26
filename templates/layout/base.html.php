@@ -58,7 +58,7 @@ $role = new Role();
             <button class="btn btn-secondary dropdown-toggle bg-Danger " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             Classse
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
                 <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."lister-classe"?>">Lister Classe</a> </button></li>
                 <li><button class="dropdown-item" type="button"> <a href="<?=Constantes::WEB_ROOT."creer-classe"?>"> Creer Classe </a></button></li>
                 <li><button class="dropdown-item" type="button">lister CLasse Professeur</button></li>
@@ -107,7 +107,7 @@ $role = new Role();
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0">search</button> 
         </div>
         <div class="end">
-            <a href="<?=Constantes::WEB_ROOT."logout"?>"> <button type="button" class="btn btn-primary"> Deconnexion</button></a>
+            <a href="logout"> <button type="button" class="btn btn-primary"> Deconnexion</button></a>
 
         </div>
 

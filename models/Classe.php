@@ -120,11 +120,8 @@ class Classe extends Model {
         $db=parent::database();
          $db->connexionDB();
 
-        $sql= 'UPDATE classe SET libele = :libele, filiere = :filiere, niveau = :niveau WHERE id = :id';
-        $data=[ 'id' => $this->id,
-        'libele' => $this->libele,
-        'filiere' => $this->filiere,
-        'niveau' => $this->niveau];
+        $sql= 'UPDATE classe SET libele = ?, filiere = ?, niveau = ? WHERE id = ?';
+        $data=[$this->libele,$this->filiere,$this->niveau,$this->id,];
         $result=$db->executeUpdate($sql,$data);
          $db->closeConnexion(); 
 

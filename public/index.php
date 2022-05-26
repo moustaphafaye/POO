@@ -1,7 +1,7 @@
 <?php
 //inclusion du fichier  de la classe
 //composer à faisant l'autoloading
-
+// session_start();
 use App\Model\AC;
 use App\Model\Professeur;
 use App\Model\Module;
@@ -19,6 +19,7 @@ use App\Model\Classe;
 
 require("../vendor/autoload.php");
 require_once("../core/fonction.php");
+
 // $classe=new Classe();
 // $classe->setId("2");
 // $classe->setLibele("Master");

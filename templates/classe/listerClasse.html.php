@@ -17,18 +17,25 @@
     </thead>
     <tbody>
         <?php foreach ($classe as $clas) :?>
-            <tr>
+        <tr>
             <th><?=$clas->id?></th>
             <td><?=$clas->libele?></td>
             <td><?=$clas->filiere?></td>
             <td><?=$clas->niveau?></td>
             <td>
-            <a href="<?= $Constantes::WEB_ROOT."modifier-classe/".$clas->id ?>"> <button class='btn btn-outline-warning'>Modifier <?= $class->id ?></button></a>
+                <a href="<?= $Constantes::WEB_ROOT."modifier-classe/".$clas->id ?>"> 
+                <button  class='btn btn-outline-warning'>Modifier </button></a>
+                <form class="btn btn-outline" style="border:none;" action="<?= $Constantes::WEB_ROOT."supprime-classe"?>" method="post">
+                    <input type="hidden" name="id" value="<?=$clas->id ?>">
+                    <button class='btn btn-outline-danger' type="submit">Supprimer</button>
+                </form>
+
+                <!-- <a href="<?= $Constantes::WEB_ROOT."supprime-classe/".$clas->id ?>"> <button class='btn btn-outline-danger'>Supprime <?= $class->id ?></button></a> -->
 
             </td>
 
  
-            </tr>
+        </tr>
 
  <?php 
  //$a++; 

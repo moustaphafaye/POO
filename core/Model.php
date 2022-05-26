@@ -32,7 +32,6 @@ abstract class Model implements IModel {
         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
         $sql="delete from ".self::table()." where id=$id";//Pas bon
         $result=$db->executeUpdate($sql);
-        echo $sql;
         $db->closeConnexion();
         return $result; 
     }
@@ -45,14 +44,10 @@ abstract class Model implements IModel {
         $db->closeConnexion();
         return $result;
     }
-    public static function findById(int $id):object|null{
+    public static function findById(int $id):object|null|array{
         $db=self::database();
         $db->connexionDB();
-        //Requete  préparer est une requete dont la variable est injecter lors de l'execution de la requete
-        //A lécriture on met un jocker(?) à la place de la variable
-        //les jocker ont des position ,le premier on le met à la position 0 le deuxieme à la position 2  ainsi de suite
-
-        $sql="select * from '".self::table()."'where id=?";
+        $sql="select * from ".self::table()." where id=?";
         $result=$db->executeSelect($sql,[$id]);
         // echo $sql;
         $db->closeConnexion();
