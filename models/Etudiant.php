@@ -28,7 +28,10 @@ class Etudiant extends User{
 
         return $this;
     }
-
+    public static function getRole()
+    {
+        return self::$role='ROLE_ETUDIANT';
+    }
     /**
      * Get the value of sexe
      */ 
@@ -84,9 +87,5 @@ class Etudiant extends User{
      }
 
 
-    public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like '".self::$role."'";
-        echo $sql;
-        return[];
-    }
+    
 }

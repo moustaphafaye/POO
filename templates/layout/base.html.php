@@ -96,7 +96,7 @@ $role = new Role();
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li> <a href="<?=$Constantes::WEB_ROOT."inscrire-etudiant"?>"> <button class="dropdown-item" type="button">Inscrire Etudiant </button></a></li>
-                <li><button class="dropdown-item" type="button"> Lister Etudiant</button></li>
+                <li> <a href="<?=$Constantes::WEB_ROOT."lister-etudiant"?>"> <button class="dropdown-item" type="button"> Lister Etudiant</button></a></li>
                 <li><button class="dropdown-item" type="button">Annuler Inscription</button></li>
                 <li><button class="dropdown-item" type="button">Suspendre Inscription </button></li>
 

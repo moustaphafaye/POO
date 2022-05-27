@@ -9,6 +9,8 @@ class Classe extends Model {
     private string $libele;
     private string $filiere;
     private string $niveau;
+    private bool $etat;
+
    
     
     public function professeurs():array|null{
@@ -116,17 +118,54 @@ class Classe extends Model {
          return $result;
        
      }
-     public function update():int{
+     public static function delete(int $id):int{
         $db=parent::database();
          $db->connexionDB();
-
-        $sql= 'UPDATE classe SET libele = ?, filiere = ?, niveau = ? WHERE id = ?';
-        $data=[$this->libele,$this->filiere,$this->niveau,$this->id,];
-        $result=$db->executeUpdate($sql,$data);
+        $sql= "UPDATE classe SET etat=0 WHERE id = ?";
+        $result=$db->executeUpdate($sql,[$id]);
          $db->closeConnexion(); 
 
         // $sql="INSERT INTO classe (`libele`,`filiere`,`niveau`) VALUES (?,?,?)";
         // $rql=Update classe set Téléphone=’772062042’, Adresse=’Parcelles’where Matricule=’004A3’ ;
         return $result;
+    }
+    public static function findAll():array{
+        $db=self::database();
+        $db->connexionDB();
+        $sql="select * from ".self::table()." WHERE etat=1";
+        
+        $result=$db->executeSelect($sql);
+        // echo $sql;
+        $db->closeConnexion();
+        return $result;
+    }
+    public function update():int{
+        $db=self::database();
+         $db->connexionDB();
+         //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
+        $sql="update classe set libele = ?, filiere= ?, niveau= ? where id= ?";
+         $result=$db->executeUpdate($sql,[$this->libele,$this->filiere,$this->niveau,$this->id]);
+         return $result;
+         
+     }
+
+    /**
+     * Get the value of etat
+     */ 
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * Set the value of etat
+     *
+     * @return  self
+     */ 
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
     }
 }

@@ -6,8 +6,7 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Motif</th>
-            <th>Date</th>
+            <th>libele</th>
             <th>Etat</th>
 
         </tr>
@@ -15,13 +14,12 @@
     <tbody>
     <?php $a=1;?>
 
-        <?php foreach ($demande as $dem) :?>
+        <?php foreach ($annee as $ans) :?>
             <tr>
             
             <td><?= $a;?></td>
-            <td><?= $dem->motif?></td>
-            <td><?= $dem->date?></td>
-            <td><?= $dem->etat?></td>
+            <td><?=$ans->libelleanne?></td>
+            <td><?= $ans->etat?></td>
 
             <td>
                         <button class='btn btn-outline-warning'>Accepter</button>

@@ -28,9 +28,10 @@ class DataBase  {
         $this->pdo=null;
     }
     public function executeSelect(string $sql,array $data=[],bool $single=false):object|array|null{
-
         $query=$this->pdo->prepare($sql); 
+        
         $query->execute($data);
+        
         if($single){
             //si s$single = true
             $result=$query->fetch(\PDO::FETCH_OBJ);

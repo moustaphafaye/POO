@@ -22,7 +22,7 @@ class SecurityController extends Controller{
             if($userconnect!=NULL){
                 $_SESSION["user"]=$userconnect;
             //    var_dump($_SESSION["user"]->role);
-           
+        //    ( $_SESSION["user"]->id);
            
             $role=new Role();
             if( $role::isRP()){

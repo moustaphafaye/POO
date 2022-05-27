@@ -21,10 +21,10 @@ class Controller  {
         $data["request"]=$this->request;
         ob_start();
         extract($data);
-        
-        require_once(Constantes::ROOT()."templates/".$path);    
+        // dd($path); 
+        require_once(Constantes::ROOT()."templates/".$path);
         $content_for_views = ob_get_clean();
-        require_once(Constantes::ROOT()."templates/layout/base.html.php");
+        require_once(Constantes::ROOT()."templates/layout/base.html.php");  
     }
     public function instancifier(string $classe,array $data){
         return $classe=InstanceFactory::fromProperties($classe,$data);

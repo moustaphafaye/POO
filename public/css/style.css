@@ -16,6 +16,16 @@
 
     
  }
+ #classe{
+    height: 2.5em;
+    border-radius: 0.5em;
+    margin-top: 20%;
+ }
+ #annee{
+   height: 3em;
+   border-radius: 0.5em;
+   margin-top: 35%;
+ }
  /* form{
     
     justify-content: center;

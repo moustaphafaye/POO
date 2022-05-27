@@ -1,7 +1,11 @@
 <?php
 namespace App\Model;
-class AC extends User{
 
+use App\Model\User;
+
+class AC extends User{
+    private string $sexe;
+    private string $adresse;
     //les atributs navigationnels =>atributs issus des associations
     //oneToMany => inscription
     //1ere approche
@@ -22,7 +26,7 @@ class AC extends User{
     public static function findAll():array{
         $db=parent::database();
         $db->connexionDB();
-        $sql="select id  ,`nom_complet`,`role`,`login`,`password` from ".parent::table()." where role like 'ROLE_AC'";
+        $sql="select nom_complet,adresse,sexe from ".parent::table()." where role like 'ROLE_AC'";
         $results=$db->executeSelect($sql);
         $db->closeConnexion(); 
         return $results;
@@ -42,4 +46,44 @@ class AC extends User{
          return $result;
        
      }
+
+    /**
+     * Get the value of adresse
+     */ 
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set the value of adresse
+     *
+     * @return  self
+     */ 
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of sexe
+     */ 
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * Set the value of sexe
+     *
+     * @return  self
+     */ 
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
 } 

@@ -16,9 +16,29 @@
                         <input type="text"name="nom_complet" id="form1Example13" class="form-control form-control-lg" />
                         </div>
                         <div class="separee">
-                        <label class="form-label" for="form1Example13">Classe</label>
+                        <!-- <select class="custom-select"style="width:150px;">
+                             -->
+                            <?php
 
-                        <input type="text"name="classe" id="form1Example13" class="form-control form-control-lg" />
+use App\Core\Role;
+use App\Model\Classe;
+use App\Model\AnneeScolaire;
+
+ ?>
+                           
+                        <?php $classes=new Classe();
+                        $classe=Classe::findAll();
+                        $anne=AnneeScolaire::findAll2();
+                        ?>
+                        <select name="classe" id="classe" >
+                        <option disabled selected value="0" >Selection une classe</option>
+                        <?php foreach($classe as $class) : ?>
+                            <option value="<?=$class->id;?>"><?php echo ($class->libele); ?></option>
+                        <?php endforeach ?>
+                         </select>
+                        <!-- <label class="form-label" for="form1Example13">Classe</label> -->
+
+                        <!-- <input type="text"name="classe" id="form1Example13" class="form-control form-control-lg" /> -->
                         </div>
                     </div>
                     <div  class="form-outline dis ">
@@ -37,14 +57,18 @@
                     <!-- Password input -->
                     <div  class="form-outline dis ">
                         <div class="separe">
-                        <label class="form-label" for="form1Example13">ID_AC</label>
-
-                        <input type="number"name="id_ac" id="form1Example13" class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example13" >ID_AC</label>
+                            <?php if(Role::isAC()):?>
+                        <input type="number"name="id_ac"value="" id="form1Example13" class="form-control form-control-lg" />
+                                <?php endif ?>
                         </div>
                         <div class="separee">
-                        <label class="form-label" for="form1Example13">Anneee Scolaire</label>
+                        <select name="classe" id="annee" >
+                        <?php foreach($anne as $ans) : ?>
+                            <option value="<?=$ans->id;?>"><?php echo ($ans->libelleanne); ?></option>
+                        <?php endforeach ?>
+                         </select>
 
-                        <input type="text"name="anneescolaire" id="form1Example13" class="form-control form-control-lg" />
                         </div>
                     </div>
                     <div class="form-outline ">

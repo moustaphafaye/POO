@@ -65,4 +65,14 @@ class AnneeScolaire extends Model {
          return $result;
        
      }
+     public static function findAll2():array{
+        $db=self::database();
+        $db->connexionDB();
+        $sql="select * from ".self::table()." WHERE etat=1";
+        
+        $result=$db->executeSelect($sql);
+        // echo $sql;
+        $db->closeConnexion();
+        return $result;
+     }
 }
