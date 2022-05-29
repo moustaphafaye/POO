@@ -28,10 +28,11 @@ class DataBase  {
         $this->pdo=null;
     }
     public function executeSelect(string $sql,array $data=[],bool $single=false):object|array|null{
+        
         $query=$this->pdo->prepare($sql); 
         
         $query->execute($data);
-        
+       
         if($single){
             //si s$single = true
             $result=$query->fetch(\PDO::FETCH_OBJ);
@@ -48,5 +49,12 @@ class DataBase  {
         $query->execute($data);
         //insert => retourner l'id generer
        return $query->rowCount();
+    }
+    public function executeUpdateLastID(string $sql,array $data=[]):int{
+        $query=$this->pdo->prepare($sql);
+        $query->execute($data);
+        //insert => retourner l'id generer
+       return $this->pdo->lastInsertId();
+
     }
 }

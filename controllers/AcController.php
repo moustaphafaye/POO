@@ -12,7 +12,6 @@ class AcController extends Controller{
                 "ac"=>$Ac
 
             ];
-            
             $this->render('ac/liste.html.php',$data);
         
     }  

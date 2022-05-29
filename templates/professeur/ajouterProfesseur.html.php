@@ -14,14 +14,60 @@
                     <!-- Email input -->
                     <div class="form-outline mb-4  ">
                         <label class="form-label" for="form1Example13">nom Complet</label>
-
                         <input name="nom_complet" id="form1Example13" class="form-control form-control-lg" />
                     </div>
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form1Example13">Grade</label>
+                    <div  class="form-outline aligne mb-4">
+                            <select class="clas"   id="example-single">
 
-                        <input name="grade" id="form1Example13" class="form-control form-control-lg" />
+                                <option disabled selected value="0" >Selection un niveau</option>
+                                <option value="1">Niveau 1</option>
+                                <option value="2">niveau 2</option>
+                                <option value="2">niveau 3</option>
+
+                            </select>
                     </div>
+                    <?php
+
+                            use App\Core\Model;
+                            use App\Core\Role;
+                        use App\Model\Classe;
+                        use App\Model\AnneeScolaire;
+                            use App\Model\Module;
+
+                        $classes=new Classe();
+                        $module=new Module();
+                        $module=Module::findAll();
+                        $classe=Classe::findAll();                     
+                    ?>
+                    <div class="form-outline mb-4">
+                        <div class="er">
+                             <label class="form-label " for="form1Example13">La ou les Classes du professeur</label>
+                        </div>
+                            <select   class="select selectpicker " multiple data-mdb-placeholder="Example placeholder" multiple>
+                        <?php foreach($classe as $class) : ?> 
+                            <option value="<?= $class->id;?>"><?php echo ($class->libele); ?></option>
+                                
+                                <?php endforeach ?>
+                            </select>
+                        
+
+                    </div>
+                    <div class="form-outline mb-4">
+
+                        <div class="er">
+                             <label class="form-label " for="form1Example13">Le ou les Module du professeur</label>
+                        </div>
+                        
+                            <select   class="select selectpicker " multiple data-mdb-placeholder="Example placeholder" multiple>
+                                <?php foreach ($module as $mod) :?>
+                                <option value="<?=$mod->id;?>"><?php echo ($mod->libelleModule);?></option>
+                                <?php endforeach ?>
+                            </select>
+                        
+
+                    </div>
+
+
 
                     <!-- Password input -->
                    

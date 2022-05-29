@@ -10,6 +10,14 @@ class Inscription extends Model{
     {
         
     }
+    public static function lesid(int $idac,int $idcl,int $idans,int $idet){
+        $db=parent::database();
+         $db->connexionDB();
+        $sql="INSERT INTO inscription (`ac_id`,`classe_id`,`etudiant_id`,`annee_id`) VALUES (?,?,?,?)";
+        $result=$db->executeUpdate($sql,[$idac,$idcl,$idans,$idet]);
+        $db->closeConnexion(); 
+        return $result;
+    }
     //ManyToOne => AC
     public function ac():AC{
         $sql="select p.* from ".parent::table()."i,personne p
@@ -27,5 +35,25 @@ class Inscription extends Model{
         and i.id=?";
         return parent::findBy($sql,[$this->id]);
        
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 } 

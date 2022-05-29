@@ -21,7 +21,8 @@ class Controller  {
         $data["request"]=$this->request;
         ob_start();
         extract($data);
-        // dd($path); 
+        
+     // dd($path); 
         require_once(Constantes::ROOT()."templates/".$path);
         $content_for_views = ob_get_clean();
         require_once(Constantes::ROOT()."templates/layout/base.html.php");  

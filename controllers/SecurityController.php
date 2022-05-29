@@ -22,8 +22,9 @@ class SecurityController extends Controller{
             if($userconnect!=NULL){
                 $_SESSION["user"]=$userconnect;
             //    var_dump($_SESSION["user"]->role);
-        //    ( $_SESSION["user"]->id);
-           
+                   $id=( $_SESSION["user"]->id);
+                   
+                    $_SESSION["qui"]=$id;
             $role=new Role();
             if( $role::isRP()){
                 $profs=Professeur::findAll(); 

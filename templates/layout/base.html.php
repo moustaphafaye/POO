@@ -18,6 +18,8 @@ $role = new Role();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="<?=Constantes::WEB_ROOT.'bootstrap/dist/css/bootstrap.min.css'?>">
+    <link rel="stylesheet" href="<?=Constantes::WEB_ROOT.'bootstrap1/bootstrap-select.min.css'?>">
+
     <link rel="stylesheet" href="<?=Constantes::WEB_ROOT."css/style.css"?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -107,7 +109,7 @@ $role = new Role();
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0">search</button> 
         </div>
         <div class="end">
-            <a href="logout"> <button type="button" class="btn btn-primary"> Deconnexion</button></a>
+            <a id="aaa" href="logout"> <button type="button" class="btn btn-primary"> Deconnexion</button></a>
 
         </div>
 
@@ -120,8 +122,13 @@ $role = new Role();
 </div>
  
 
-<script src="<?=Constantes::WEB_ROOT.'bootstrap/dist/js/bootstrap/bootstrap.min.js'?>"></script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+<script src="<?=Constantes::WEB_ROOT.'bootstrap/dist/js/bootstrap/bootstrap.min.js'?>"></script>
+<script src="<?=Constantes::WEB_ROOT.'bootstrap/dist/js/bootstrap/bootstrap.min.js'?>"></script>
+<script src="<?=Constantes::WEB_ROOT.'bootstrap1/jquery.min.js'?>"></script>
+<script src="<?=Constantes::WEB_ROOT.'bootstrap1/bootstrap-select.min.js'?>"></script>
 </body>
 </html>

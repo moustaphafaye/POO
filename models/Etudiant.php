@@ -47,7 +47,7 @@ class Etudiant extends User{
      */ 
     public function setSexe($sexe)
     {
-        $this->sexe = $sexe;
+        $this->sexe =$sexe;
 
         return $this;
     }
@@ -79,9 +79,10 @@ class Etudiant extends User{
          $db->connexionDB();
          //Requete non préparer est une requete dont la variable est injecter lors de l'écriture de la requete
         $sql="INSERT INTO personne (`nom_complet`,`login`,`password`,`role`,`matricule`,`adresse`,`sexe`) VALUES (?,?,?,?,?,?,?)";
-     
-         $result=$db->executeUpdate($sql,[$this->nomComplet,$this->login,$this->password,parent::$role,$this->matricule,$this->sexe]);
-         $db->closeConnexion(); 
+        $result=$db->executeUpdateLastID($sql,[$this->nomComplet,$this->login,$this->password,parent::$role,$this->matricule,$this->adresse,$this->sexe]);
+        
+         $db->closeConnexion();
+         
          return $result;
        
      }

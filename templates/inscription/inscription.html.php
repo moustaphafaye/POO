@@ -59,11 +59,11 @@ use App\Model\AnneeScolaire;
                         <div class="separe">
                         <label class="form-label" for="form1Example13" >ID_AC</label>
                             <?php if(Role::isAC()):?>
-                        <input type="number"name="id_ac"value="" id="form1Example13" class="form-control form-control-lg" />
+                        <input type="number"name="id_ac" value="<?=$_SESSION["qui"];?>" id="form1Example13" class="form-control form-control-lg" />
                                 <?php endif ?>
                         </div>
                         <div class="separee">
-                        <select name="classe" id="annee" >
+                        <select name="annee" id="annee" >
                         <?php foreach($anne as $ans) : ?>
                             <option value="<?=$ans->id;?>"><?php echo ($ans->libelleanne); ?></option>
                         <?php endforeach ?>
@@ -80,12 +80,12 @@ use App\Model\AnneeScolaire;
                     <div class="separe">
                         <label class="form-label" for="form1Example13">Sexe</label>
 
-                        <input type="text"name="nom_complet" id="form1Example13" class="form-control form-control-lg" />
+                        <input type="text"name="sexe" id="form1Example13" class="form-control form-control-lg" />
                         </div>
                         <div class="separee">
                         <label class="form-label" for="form1Example13">Matricule</label>
 
-                        <input type="text"name="nom_complet" id="form1Example13" class="form-control form-control-lg" />
+                        <input type="text"name="matricule" id="form1Example13" class="form-control form-control-lg" />
                         </div>
                     </div>
 
